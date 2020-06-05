@@ -13,6 +13,12 @@ do
     sed -i 's/&gt;/>/g' "./$folder/python/$(basename $xmlfile .xml).py"
   done
 
+  # Edx Currently Formats CDATA automatically on course export
+  # for pyfile in $(grep -l "<![CDATA[.*" "./$folder/python"/*)
+  # do
+  #   sed -n '/^.*<![CDATA[.*$/,/^.*]]>.*$/p' $pyfile | sed '1d;$d' > $pyfile
+  # done
+
   unzip -qq "./$folder/course/static/python_lib.zip" -d "./$folder/python"
 
 
