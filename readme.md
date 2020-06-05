@@ -37,6 +37,7 @@ On your local machine
 ./preprocess.sh
 ```
 Note: All python code should now cleanly be located in each item in `edx_pygration/extracted_courses/{course_name}/python`
+Note: You should check this to make sure that your code does not have caveats that prevent the preprocess step from working properly.
 
 ### Set up a test virtualenv
 ```
@@ -44,7 +45,7 @@ virtualenv -p python36 venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-Note: You can use any python environment you want to
+Note: You can use any python environment you want to test with.
 
 ### Using extra python imports
 You can install extra python packages into your local `venv` for testing purposes.
@@ -66,6 +67,7 @@ sed -n '/^.*<script.*python.*$/,/^.*<\/script>.*$/p' $xmlfile | sed '1d;$d' >> "
 ```
 ./test.sh
 ```
+Note: Only files that throw flags or return content to the console are logged when running `./test.sh`. This means that no results are good results.
 
 
 

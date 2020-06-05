@@ -19,7 +19,7 @@ do
   #   sed -n '/^.*<![CDATA[.*$/,/^.*]]>.*$/p' $pyfile | sed '1d;$d' > $pyfile
   # done
 
-  unzip -qq "./$folder/course/static/python_lib.zip" -d "./$folder/python"
+  unzip -qq "./$folder/course/static/python_lib.zip" -d "./$folder/python" &> /dev/null
 
 
 done
