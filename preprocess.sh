@@ -8,7 +8,7 @@ do
     touch "./$folder/python/$(basename $xmlfile .xml).py"
     echo "import math, random, scipy, numpy" > "./$folder/python/$(basename $xmlfile .xml).py"
     sed -n '/^.*<script.*python.*$/,/^.*<\/script>.*$/p' $xmlfile | sed '1d;$d' >> "./$folder/python/$(basename $xmlfile .xml).py"
-    sed -i 's/&amp;/&/g' "./$folder/python/$(basename $xmlfile .xml).py"
+    sed -i 's/&amp;/\&/g' "./$folder/python/$(basename $xmlfile .xml).py"
     sed -i 's/&lt;/</g' "./$folder/python/$(basename $xmlfile .xml).py"
     sed -i 's/&gt;/>/g' "./$folder/python/$(basename $xmlfile .xml).py"
   done
